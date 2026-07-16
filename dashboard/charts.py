@@ -1,54 +1,36 @@
 # dashboard/charts.py
 
 import streamlit as st
-import random
+import pandas as pd
+import sqlite3
 
 
+# -----------------------------
+# Get RPM data from SQLite DB
+# -----------------------------
+def get_rpm_data():
+
+    conn = sqlite3.connect("telemetry.db")
+
+    query = "SELECT rpm FROM telemetry"
+
+    df = pd.read_sql_query(query, conn)
+
+    conn.close()
+
+    return df
+
+
+# -----------------------------
+# Show Graphs on Dashboard
+# -----------------------------
 def show_charts():
 
     st.header("Vehicle Performance Graphs")
 
-    # ----------------------------------
     # RPM Graph
-    # ----------------------------------
-
-    rpm_data = [random.randint(1000, 7000) for _ in range(20)]
-
     st.subheader("RPM Graph")
-    st.line_chart(rpm_data)
 
-    # ----------------------------------
-    # Speed Graph
-    # ----------------------------------
+    rpm_df = get_rpm_data()
 
-    speed_data = [random.randint(20, 180) for _ in range(20)]
-
-    st.subheader("Speed Graph")
-    st.line_chart(speed_data)
-
-    # ----------------------------------
-    # Temperature Graph
-    # ----------------------------------
-
-    temperature_data = [random.randint(70, 110) for _ in range(20)]
-
-    st.subheader("Temperature Graph")
-    st.line_chart(temperature_data)
-
-    # ----------------------------------
-    # Fuel Graph
-    # ----------------------------------
-
-    fuel_data = [random.randint(10, 100) for _ in range(20)]
-
-    st.subheader("Fuel Level Graph")
-    st.line_chart(fuel_data)
-
-    # ----------------------------------
-    # Battery Graph
-    # ----------------------------------
-
-    battery_data = [random.randint(20, 100) for _ in range(20)]
-
-    st.subheader("Battery Graph")
-    st.line_chart(battery_data)
+    st.line_chart(rpm_df)
