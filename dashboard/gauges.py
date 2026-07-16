@@ -5,7 +5,7 @@ def show_gauges():
 
     st.header("Live Vehicle Metrics")
 
-    # First Row
+    # Row 1
     col1, col2 = st.columns(2)
 
     with col1:
@@ -14,7 +14,7 @@ def show_gauges():
     with col2:
         st.metric("Speed", "120 km/h")
 
-    # Second Row
+    # Row 2
     col3, col4 = st.columns(2)
 
     with col3:
@@ -23,7 +23,7 @@ def show_gauges():
     with col4:
         st.metric("Fuel Level", "65 %")
 
-    # Third Row
+    # Row 3
     col5, col6 = st.columns(2)
 
     with col5:
@@ -32,5 +32,27 @@ def show_gauges():
     with col6:
         st.metric("Gear Position", "4")
 
-    # Last Row
-    st.metric("Telemetry Packets", "1")
+    # Row 4
+    col7, col8 = st.columns(2)
+
+    with col7:
+        st.metric("CAN Bus Status", "CONNECTED")
+
+    with col8:
+        st.metric("Cooling Fan", "ON")
+
+    # Row 5
+    col9, col10 = st.columns(2)
+
+    with col9:
+        st.metric("GPS Coordinates",
+                  "22.5726 , 88.3639")
+
+    with col10:
+        st.metric("Telemetry Packets", "10")
+
+    # Row 6
+    st.metric(
+        "Last Packet Timestamp",
+        "2026-07-16 20:30:45"
+    )
