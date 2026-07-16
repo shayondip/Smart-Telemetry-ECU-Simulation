@@ -1,8 +1,7 @@
 # test_logger.py
 
 from telemetry.packet import TelemetryPacket
-from logger.csv_logger import CSVLogger
-from logger.json_logger import JSONLogger
+from logger.log_manager import LogManager
 
 
 # Create Telemetry Packet
@@ -23,14 +22,12 @@ packet.display()
 packet_data = packet.to_dict()
 
 
-# CSV Logger
-csv_logger = CSVLogger()
-csv_logger.save(packet_data)
+# Create Log Manager
+log_manager = LogManager()
 
 
-# JSON Logger
-json_logger = JSONLogger()
-json_logger.save(packet_data)
+# Save packet to all loggers
+log_manager.save_all(packet_data)
 
 
 print("\nTelemetry packet saved successfully.")

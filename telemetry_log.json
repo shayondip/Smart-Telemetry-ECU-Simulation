@@ -8,5 +8,15 @@
             "temperature": 87,
             "fuel": 65
         }
+    },
+    {
+        "vehicle_id": "ECU-001",
+        "timestamp": "2026-07-16T20:06:32.581884",
+        "data": {
+            "rpm": 3500,
+            "speed": 120,
+            "temperature": 87,
+            "fuel": 65
+        }
     }
 ]
