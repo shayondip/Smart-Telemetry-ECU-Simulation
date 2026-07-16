@@ -11,6 +11,62 @@ class TelemetryDatabase:
         print("\nDatabase Connected Successfully.")
 
 
+    def insert_telemetry(
+            self,
+            vehicle_id,
+            timestamp,
+            rpm,
+            speed,
+            temperature,
+            battery,
+            fuel,
+            gps,
+            gear,
+            can_status,
+            cooling_fan
+    ):
+
+        self.cursor.execute("""
+
+        INSERT INTO telemetry(
+
+            vehicle_id,
+            timestamp,
+            rpm,
+            speed,
+            temperature,
+            battery,
+            fuel,
+            gps,
+            gear,
+            can_status,
+            cooling_fan
+
+        )
+
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+
+        """,
+
+        (
+            vehicle_id,
+            timestamp,
+            rpm,
+            speed,
+            temperature,
+            battery,
+            fuel,
+            gps,
+            gear,
+            can_status,
+            cooling_fan
+        ))
+
+        self.connection.commit()
+
+        print("\nTelemetry data inserted successfully.")
+
+
     def close_connection(self):
 
         self.connection.close()
