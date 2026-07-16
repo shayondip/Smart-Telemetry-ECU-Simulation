@@ -2,6 +2,7 @@
 
 from telemetry.packet import TelemetryPacket
 from telemetry.transmitter import TelemetryTransmitter
+from telemetry.receiver import TelemetryReceiver
 
 
 # Create Telemetry Packet
@@ -27,11 +28,26 @@ packet_data = packet.to_dict()
 # Create Transmitter
 transmitter = TelemetryTransmitter()
 
-
-# Send Packet
+# Transmit Packet
 transmitter.transmit(packet_data)
 
 
-# Show Total Packets Sent
-print("\nTotal Packets Sent:")
+# Create Receiver
+receiver = TelemetryReceiver()
+
+# Receive Packet
+receiver.receive(packet_data)
+
+
+# Show Packet Counts
+print("\nPackets Sent:")
 print(transmitter.get_packet_count())
+
+
+print("\nPackets Received:")
+print(receiver.get_packet_count())
+
+
+# Display All Received Packets
+print("\nAll Received Packets:")
+print(receiver.get_all_packets())
