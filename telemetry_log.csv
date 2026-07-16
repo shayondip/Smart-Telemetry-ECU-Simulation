@@ -1,0 +1,4 @@
+Vehicle ID,Timestamp,Data
+ECU-001,2026-07-16T19:56:33.386822,"{'rpm': 3500, 'speed': 120, 'temperature': 87, 'fuel': 65}"
+ECU-001,2026-07-16T19:57:54.615138,"{'rpm': 3500, 'speed': 120, 'temperature': 87, 'fuel': 65}"
+ECU-001,2026-07-16T20:00:53.519966,"{'rpm': 3500, 'speed': 120, 'temperature': 87, 'fuel': 65}"
