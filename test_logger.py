@@ -2,6 +2,7 @@
 
 from telemetry.packet import TelemetryPacket
 from logger.csv_logger import CSVLogger
+from logger.json_logger import JSONLogger
 
 
 # Create Telemetry Packet
@@ -15,17 +16,21 @@ packet = TelemetryPacket(
     }
 )
 
-# Display the packet (Optional)
+# Display packet
 packet.display()
 
 # Convert packet to dictionary
 packet_data = packet.to_dict()
 
-# Create CSV Logger object
-logger = CSVLogger()
 
-# Save packet to CSV file
-logger.save(packet_data)
+# CSV Logger
+csv_logger = CSVLogger()
+csv_logger.save(packet_data)
 
-# Show success message
-print("\nTelemetry packet saved to CSV successfully.")
+
+# JSON Logger
+json_logger = JSONLogger()
+json_logger.save(packet_data)
+
+
+print("\nTelemetry packet saved successfully.")
