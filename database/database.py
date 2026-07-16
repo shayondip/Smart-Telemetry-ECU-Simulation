@@ -10,7 +10,6 @@ class TelemetryDatabase:
 
         print("\nDatabase Connected Successfully.")
 
-
     def insert_telemetry(
             self,
             vehicle_id,
@@ -66,6 +65,13 @@ class TelemetryDatabase:
 
         print("\nTelemetry data inserted successfully.")
 
+    def get_all_telemetry(self):
+
+        self.cursor.execute("SELECT * FROM telemetry")
+
+        rows = self.cursor.fetchall()
+
+        return rows
 
     def close_connection(self):
 
