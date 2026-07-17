@@ -5,3 +5,4 @@ ECU-001,2026-07-16T20:00:53.519966,"{'rpm': 3500, 'speed': 120, 'temperature': 8
 ECU-001,2026-07-16T20:03:03.878818,"{'rpm': 3500, 'speed': 120, 'temperature': 87, 'fuel': 65}"
 ECU-001,2026-07-16T20:06:32.581884,"{'rpm': 3500, 'speed': 120, 'temperature': 87, 'fuel': 65}"
 ECU-001,2026-07-16T21:15:41.262711,"{'rpm': 3500, 'speed': 120, 'temperature': 87, 'battery': 92, 'fuel': 65, 'gps': '22.5726,88.3639', 'gear': 4, 'can_status': 'CONNECTED', 'cooling_fan': 'ON'}"
+ECU-001,2026-07-17T10:04:48.297357,"{'rpm': 3500, 'speed': 120, 'temperature': 87, 'battery': 92, 'fuel': 65, 'gps': '22.5726,88.3639', 'gear': 4, 'can_status': 'CONNECTED', 'cooling_fan': 'ON'}"
